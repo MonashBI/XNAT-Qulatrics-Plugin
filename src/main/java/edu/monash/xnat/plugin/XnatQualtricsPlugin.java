@@ -5,9 +5,9 @@ import org.springframework.context.annotation.Bean;
 
 @XnatPlugin(value = "XNATQualtricsPlugin", name = "XNAT Qualtrics Plugin")
 
-public class XnatQulatricsPlugin {
+public class XnatQualtricsPlugin {
     @Bean
-    public String xnatQulatricsPluginMessage(){
+    public String xnatQualtricsPluginMessage(){
         return "hello from xnat qualtrics plugin";
     }
 }
