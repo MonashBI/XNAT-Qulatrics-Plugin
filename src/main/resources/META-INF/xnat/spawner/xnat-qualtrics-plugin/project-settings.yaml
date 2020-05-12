@@ -1,0 +1,62 @@
+#########################***###################
+####     Qualtrics Survey Project-level Settings      ####
+######################***######################
+projectSettings:
+  kind: tabs
+  label: Survey Configuration
+  meta:
+    tabGroups:
+      surveyConfig: Survey Configuration
+  contents:
+    surveyDefaults:
+      kind: tab
+      label: Survey Settings
+      group: surveyConfig
+      active: false
+      contents:
+        surveyPanel:
+          kind: panel.form
+          name: surveyPanel
+          label: Survey Settings
+          method: POST
+          url: /xapi/survey/projects/{{XNAT.data.projectID}}
+          contentType: json
+          contents:
+            surveyEnabled:
+              kind: panel.input.switchbox
+              name: surveyEnabled
+              value: true
+              label: Enable Survey?
+              onText: Enabled
+              offText: Disabled
+            surveyBaseUrl:
+              kind: panel.input.text
+              name: surveyURL
+              label: Survey Base URL
+              description: >
+                The Base url for the survey
+            surveyQueryType:
+              kind: panel.input.text
+              name: surveyQueryType
+              label: Survey Query Type
+              description: >
+                Type of query String e.g: Q_EED or Q_PopulateResponse
+            surveyQueryElem:
+              kind: panel.element
+              label: Survey Query Parameter
+              info: >
+                <p>Please provide query string that will be passed as a query parameter to
+                survey page. SUBJECT_ID will be replaced with xnat subjectId and USER_NAME will
+                be replaced with logged in username. e.g: {"QID2":{"4":"USER_NAME","5":"SUBJECT_ID"}}
+                </p>
+              contents:
+                info:
+                  tag: p
+                  element:
+                    style: "margin: 3px 0 8px 0;"
+                  content: Provide query parameter string to pass to survey
+                SurveyQueryText:
+                  tag: textarea|data-code-editor=html|data-code-language=html
+                  element:
+                    name: surveyQueryParams
+                    rows: 8
