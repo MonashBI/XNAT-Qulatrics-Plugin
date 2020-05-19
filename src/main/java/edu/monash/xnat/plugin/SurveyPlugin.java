@@ -4,14 +4,14 @@ import org.nrg.framework.annotations.XnatPlugin;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-@XnatPlugin(value = "XNATQualtricsPlugin", name = "XNAT Qualtrics Plugin")
+@XnatPlugin(value = "surveyPlugin", name = "XNAT Survey Plugin")
 @ComponentScan({
         "edu.monash.xnat.plugin.preferences",
         "edu.monash.xnat.plugin.xapi"
 })
-public class XnatQualtricsPlugin {
+public class SurveyPlugin {
     @Bean
-    public String xnatQualtricsPluginMessage(){
+    public String surveyPluginMessage(){
         return "hello from xnat qualtrics plugin";
     }
 }
