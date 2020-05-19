@@ -1,0 +1,1 @@
+![Build Jar](https://github.com/MonashBI/XNAT-Qulatrics-Plugin/workflows/Build%20Jar/badge.svg)
