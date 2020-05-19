@@ -14,3 +14,7 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
           arguments: fatjar
+      - uses: actions/upload-artifact@v2
+        with:
+          name: plugin jat
+          path: /home/runner/work/XNAT-Qulatrics-Plugin/XNAT-Qulatrics-Plugin/build/libs/XNAT-Qulatrics-Plugin-all-1.0.1.jar
