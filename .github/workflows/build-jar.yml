@@ -16,5 +16,5 @@ jobs:
           arguments: fatjar
       - uses: actions/upload-artifact@v2
         with:
-          name: plugin jat
-          path: /home/runner/work/XNAT-Qulatrics-Plugin/XNAT-Qulatrics-Plugin/build/libs/XNAT-Qulatrics-Plugin-all-1.0.1.jar
+          name: XNAT-Qulatrics-Plugin-all-1.0.1.jar
+          path: build/libs/XNAT-Qulatrics-Plugin-all-1.0.1.jar
