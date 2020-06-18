@@ -1,5 +1,5 @@
 #########################***###################
-####     Qualtrics Survey Project-level Settings      ####
+####      Survey Project-level Settings      ####
 ######################***######################
 projectSettings:
   kind: tabs

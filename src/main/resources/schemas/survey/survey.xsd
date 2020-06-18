@@ -1,0 +1,41 @@
+<xs:schema targetNamespace="http://nrg.wustl.edu/survey"
+           xmlns:xdat="http://nrg.wustl.edu/xdat"
+           xmlns:survey="http://nrg.wustl.edu/survey"
+           xmlns:xnat="http://nrg.wustl.edu/xnat"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+    <xs:import namespace="http://nrg.wustl.edu/xnat" schemaLocation="../xnat/xnat.xsd"/>
+    <xs:element name="SurveyCollection" type="survey:surveyCollection"/>
+
+    <xs:complexType name="surveyCollection">
+        <xs:annotation>
+            <xs:documentation>Survey Data obtained on a Subject</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="xnat:subjectAssessorData">
+                <xs:sequence minOccurs="0">
+                    <xs:element name="SurveyComplete" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Survey Complete</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:boolean">
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="SurveyCompletedBy" minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>Survey Completed By</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:maxLength value="255"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
