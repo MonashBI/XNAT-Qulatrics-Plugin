@@ -20,10 +20,6 @@ jobs:
       - uses: eskatos/gradle-command-action@v1
         with:
           arguments: fatjar
-  build:
-    name: Upload plugin Jar
-    runs-on: ubuntu-latest
-    steps:
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -41,6 +37,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: /home/runner/work/XNAT-Qulatrics-Plugin/XNAT-Qulatrics-Plugin/build/libs/XNAT-Qulatrics-Plugin-all-1.0.1.jar
+          asset_path: build/libs/XNAT-Qulatrics-Plugin-all-1.0.1.jar
           asset_name: XNAT-Qulatrics-Plugin-all-1.0.1.jar
           asset_content_type: application/jar
