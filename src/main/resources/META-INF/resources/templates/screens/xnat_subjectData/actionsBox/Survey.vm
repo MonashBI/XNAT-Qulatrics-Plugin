@@ -1,6 +1,6 @@
 <!-- BEGIN xnat-templates/screens/xnat_subjectData/actionsBox/Survey.vm -->
 <!-- Sequence: 11 -->
-#if ($item.canDelete($user))
+#if ($item.canCreate($user))
 
 
 <script type="text/javascript">
