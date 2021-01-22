@@ -1,6 +1,5 @@
 <!-- BEGIN xnat-templates/screens/xnat_subjectData/actionsBox/Survey.vm -->
 <!-- Sequence: 11 -->
-#if ($item.canCreate($user))
 
 
 <script type="text/javascript">
@@ -35,6 +34,6 @@
 <li class="yuimenuitem lockable" id="showSurveyLink">
     <a id="url" href="" target="_blank"><div class="ic"><i class="fa fa-trash-o" style="color: #900"></i></div><div class="ic_spacer">&nbsp;</div>Survey</a>
 </li>
-#end
+
 
 <!-- END xnat-templates/screens/xnat_subjectData/actionsBox/Delete.vm -->
