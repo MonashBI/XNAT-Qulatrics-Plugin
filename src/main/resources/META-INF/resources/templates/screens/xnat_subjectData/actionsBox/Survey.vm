@@ -1,5 +1,6 @@
 <!-- BEGIN xnat-templates/screens/xnat_subjectData/actionsBox/Survey.vm -->
 <!-- Sequence: 11 -->
+#if ($item.canCreate($user))
 
 
 <script type="text/javascript">
@@ -18,7 +19,7 @@
                     $("#showSurveyLink").show();
                     surveyURL = surveyURL + "?"+config.surveyQueryType+"="
                     var surveyQueryParams = config.surveyQueryParams.replace("USER_NAME", "$user.getUsername()");
-                    surveyQueryParams = surveyQueryParams.replace("SUBJECT_ID", "$om.getId()")
+                    surveyQueryParams = surveyQueryParams.replace("SUBJECT_ID", "$!item.getProperty("label")")
                     console.log(surveyQueryParams);
                     document.getElementById('url').href = surveyURL+ surveyQueryParams;
                 } else {
@@ -34,6 +35,6 @@
 <li class="yuimenuitem lockable" id="showSurveyLink">
     <a id="url" href="" target="_blank"><div class="ic"><i class="fa fa-trash-o" style="color: #900"></i></div><div class="ic_spacer">&nbsp;</div>Survey</a>
 </li>
-
+#end
 
 <!-- END xnat-templates/screens/xnat_subjectData/actionsBox/Delete.vm -->
